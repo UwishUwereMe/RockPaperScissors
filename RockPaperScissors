@@ -1,0 +1,500 @@
+import random, replit, time
+from colorama import Fore
+user_score = 0
+computer_score = 0
+def game():
+  continue_game_choice = True
+  user_score = 0
+  computer_score = 0
+  while continue_game_choice == True:  
+    print(Fore.LIGHTRED_EX + "Winning Rules of the Rock paper scissor game as follows: \n" + Fore.YELLOW + "Rock " + Fore.RESET + "vs " + Fore.MAGENTA + "Paper" + Fore.RESET + " -> " + Fore.MAGENTA + "Paper " + Fore.RESET +  "wins" + "\n" + Fore.YELLOW + "Rock"+Fore.RESET+ " vs" + Fore.GREEN + " Scissors" + Fore.RESET +  " -> " + Fore.YELLOW + "Rock" + Fore.RESET+ " wins \n" + Fore.MAGENTA+ "Paper " + Fore.RESET + "vs "+ Fore.GREEN + "Scissors"+ Fore.RESET+ " -> "+ Fore.GREEN+ "Scissors"+ Fore.RESET + " wins \n")
+    
+    continue_game_choice = True
+    print(Fore.RED + "Your score: " + str(user_score))
+    print(Fore.BLUE + "Computer score: " + str(computer_score) + "\n")
+    print(Fore.LIGHTRED_EX + "Enter the lowercase word of your choice. For example: rock")
+    user_choice = input(Fore.RED + "\nYour Choice: " + Fore.LIGHTRED_EX)
+    user_choice.lower()
+    if user_choice == "rock" or user_choice == "scissors" or user_choice == "paper":
+      if user_choice == "rock":
+        user_choice = 1
+      elif user_choice == "scissors":
+        user_choice = 2
+      elif user_choice == "paper":
+        user_choice = 3
+      if user_choice == 1:
+        computer_choice = random.randint(1,3)
+        if computer_choice == 1:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Rock vs Rock. \nA tie!! ")
+          time.sleep(1)
+          print(Fore.CYAN + "")
+          continue_game = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 2:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Rock vs Scissors. \nUser Wins!! ")
+          user_score = user_score + 1
+          time.sleep(1)
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 3:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Rock vs Paper. \nComputer Wins!! ")
+          computer_score = computer_score + 1
+          time.sleep(1)
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+      elif user_choice == 2:
+        computer_choice = random.randint(1, 3)
+        if computer_choice == 1:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Scissors vs Rock. \nComputer Wins!! ")
+          time.sleep(1)
+          computer_score = computer_score + 1
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 2:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Scissors vs Scissors. \nA tie!! ")
+          time.sleep(1)
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 3:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Scissors vs Paper. \nUser Wins!! ")
+          time.sleep(1)
+          user_score = user_score + 1
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+      elif user_choice == 3:
+        computer_choice = random.randint(1, 3)
+        if computer_choice == 1:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Paper vs Rock. \nUser Wins!! ")
+          time.sleep(1)
+          user_score = user_score + 1
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 2:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Paper vs Scissors. \nComputer Wins!! ")
+          time.sleep(1)
+          computer_score = computer_score + 1
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+        elif computer_choice == 3:
+          print("Rock")
+          time.sleep(1)
+          print("Paper")
+          time.sleep(1)
+          print("Scissors")
+          time.sleep(1)
+          print("Shoot!")
+          time.sleep(0.5)
+          print("Paper vs Paper. \nA tie!! ")
+          time.sleep(1)
+          continue_game = input("Would you like to continue? (yes or no)\n")
+          continue_game.lower()
+          if continue_game == "no":
+            continue_game_choice = False
+            replit.clear()
+            print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+            time.sleep(5)
+            replit.clear()
+            print("Goodbye!")
+            time.sleep(2)
+            replit.clear()
+            break
+          elif continue_game == "yes":
+            continue_game_choice = True
+            replit.clear()
+          elif continue_game != "no" or continue_game != "yes":
+            print("Invalid Choice. Please try again. Failure to enter a valid word will end the game. Valid Words are as follows: \"yes\" and \"no\".")
+            continue_game_2 = input("Would you like to continue? (yes or no)\n" + Fore.LIGHTRED_EX)
+            if continue_game_2 == "yes":
+              continue_game_choice = True
+              replit.clear()
+            elif continue_game_2 == "no":
+              continue_game_choice = False
+              replit.clear()
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(5)
+              replit.clear()
+              print("Goodbye!")
+              time.sleep(2)
+              replit.clear()
+              break
+            elif continue_game_2 != "yes" or continue_game_2 != "yes":
+              replit.clear()
+              print("Invalid Choice. Ending game.")
+              time.sleep(1)
+              print("Final Scores:\n" + Fore.RED + "User Score: " + str(user_score) + Fore.BLUE + "\nComputer Score: " + str(computer_score))
+              time.sleep(2)
+              replit.clear()
+              break
+    else:
+      print("Invalid Choice. Please Try Again.")
+      continue_game_choice = True
+      time.sleep(2)
+      replit.clear()
+game()
+# I just
+# wanted
+# at
+# least
+# 500
+# lines of
+# code :)
